@@ -10,13 +10,13 @@ import { getAuth, GoogleAuthProvider, setPersistence, browserSessionPersistence 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAu_vPzfmHBwmVR_yWGLisXDIyMBi7BXHU",
-  authDomain: "pentagram-f9473.firebaseapp.com",
-  projectId: "pentagram-f9473",
-  storageBucket: "pentagram-f9473.firebasestorage.app",
-  messagingSenderId: "728166366660",
-  appId: "1:728166366660:web:347a0d9732429f6940f891",
-  measurementId: "G-TPHQVWN7JV"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: "pentagram-f9473.firebaseapp.com",
+    projectId: "pentagram-f9473",
+    storageBucket: "pentagram-f9473.firebasestorage.app",
+    messagingSenderId: "728166366660",
+    appId: "1:728166366660:web:5c106fed3a291c8140f891",
+    measurementId: "G-5HW5M195Z3"
 };
 
 // Initialize Firebase
