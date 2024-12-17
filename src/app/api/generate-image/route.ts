@@ -10,7 +10,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: `Received: ${text}`,
+      image: `https://media.licdn.com/dms/image/v2/D4E22AQH69XxWq9_TYA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1734027389429?e=2147483647&v=beta&t=cA8ocVb_sy2DQoFf20jZGrFV6X8f4VRykegtK6Fgblw`,
+      caption: text,
     });
   } catch (error) {
     return NextResponse.json(
