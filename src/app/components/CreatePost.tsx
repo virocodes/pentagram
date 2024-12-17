@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../home/page";
+import { Post as PostType } from "../../../types/types";
 
-export default function CreatePost({images, setImages, close}: {images: {image: string, caption: string}[], setImages: (images: {image: string, caption: string}[]) => void, close: () => void}) {
+export default function CreatePost({images, setImages, close}: {images: PostType[], setImages: (images: PostType[]) => void, close: () => void}) {
     const [inputText, setInputText] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    
+    const { user } = useContext(UserContext);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
@@ -22,7 +24,7 @@ export default function CreatePost({images, setImages, close}: {images: {image: 
           const data = await response.json();
           console.log(data);
           setInputText("");
-          setImages([data, ...images]);
+          setImages([{...data, user: user?.displayName}, ...images]);
         } catch (error) {
           console.error("Error:", error);
         } finally {

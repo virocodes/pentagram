@@ -1,9 +1,12 @@
-export default function Post({image}: {image: {image: string, caption: string}}) {
+'use client'
+import { Post as PostType } from "../../../types/types";
+
+export default function Post({image}: {image: PostType}) {
     return (
         <div className="gap-2 flex flex-col w-4/5">
             <div className="flex flex-row items-center gap-2">
               <img src="https://i.redd.it/instagram-default-user-profile-pic-flip-flops-v0-clnilflfeg4d1.jpg?width=230&format=pjpg&auto=webp&s=e5c920f218f52a77c28abc5175c8db29dfa0d219" className="w-10 h-10 rounded-full" />
-              <p className="text-lg">username</p>
+              <p className="text-lg">{image.user}</p>
             </div>
             <img
               src={image.image}
@@ -15,7 +18,7 @@ export default function Post({image}: {image: {image: string, caption: string}})
               </svg>
               <p className="text-md">123 likes</p>
             </div>
-            <p className="text-md"><b>username</b> {image.caption}</p>
+            <p className="text-md"><b>{image.user}</b> {image.caption}</p>
         </div>
     )
 }

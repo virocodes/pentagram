@@ -10,7 +10,7 @@ import { getAuth, GoogleAuthProvider, setPersistence, browserSessionPersistence 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "pentagram-f9473.firebaseapp.com",
     projectId: "pentagram-f9473",
     storageBucket: "pentagram-f9473.firebasestorage.app",

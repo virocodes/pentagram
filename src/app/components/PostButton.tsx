@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 import CreatePost from "./CreatePost";
+import { Post as PostType } from "../../../types/types";
 
-export default function PostButton({images, setImages}: {images: {image: string, caption: string}[], setImages: (images: {image: string, caption: string}[]) => void}) {
+export default function PostButton({images, setImages}: {images: PostType[], setImages: (images: PostType[]) => void}) {
     const [createOpen, setCreateOpen] = useState(false);
     return (
         <div className="flex flex-row items-center justify-center gap-2">
