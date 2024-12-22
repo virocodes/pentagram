@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase";
 import { firestore } from "../../../firebase";
@@ -10,7 +10,6 @@ import Auth from "../components/Auth";
 
 import { User as UserType, Board as BoardType } from "../../../types/types";
 
-export const UserContext = createContext<{ user: UserType | null }>({ user: null });
 
 export default function Home() {
 
@@ -79,7 +78,6 @@ export default function Home() {
   if (!loading && !user) router.push("/");
 
   return (
-    <UserContext.Provider value={{ user: { uid: user?.uid, displayName: user?.displayName, email: user?.email, photoURL: user?.photoURL } as UserType }}>
       <div className="min-h-screen bg-white">
         {/* Navigation Bar */}
         <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-b border-gray-100 z-50">
@@ -165,6 +163,5 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </UserContext.Provider>
   );
 }
