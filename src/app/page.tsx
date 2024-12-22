@@ -1,6 +1,5 @@
 'use client'
 
-import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, googleProvider } from "../../firebase";
 import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";

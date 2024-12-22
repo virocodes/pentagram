@@ -1,7 +1,7 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { useContext, useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import CreatePost from '../../components/CreatePost'
 import Auth from '../../components/Auth'
 import { setDoc, doc, getDoc } from 'firebase/firestore'
