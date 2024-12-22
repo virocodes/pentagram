@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+        text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .bracket { fill: #F87171; }
+        .letter { fill: #000000; }
+    </style>
+    <text x="2" y="24">
+        <tspan class="bracket">[</tspan>
+        <tspan class="letter">v</tspan>
+        <tspan class="bracket">z</tspan>
+        <tspan class="letter">n</tspan>
+        <tspan class="bracket">]</tspan>
+    </text>
+</svg>
