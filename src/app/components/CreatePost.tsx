@@ -1,7 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { UserContext } from "../home/page";
+import { useState } from "react";
 
 export default function CreatePost({
     images, 
@@ -9,15 +8,13 @@ export default function CreatePost({
     close,
     selectedIndex
 }: {
-    images: any[],
-    setImages: (images: any[]) => void, 
+    images: ({image: string, caption: string, success: boolean} | null)[],
+    setImages: (images: ({image: string, caption: string, success: boolean} | null)[]) => void, 
     close: () => void,
     selectedIndex: number
 }) {
     const [inputText, setInputText] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
-    const { user } = useContext(UserContext);
     
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

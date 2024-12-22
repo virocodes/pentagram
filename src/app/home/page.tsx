@@ -1,10 +1,10 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase";
 import { firestore } from "../../../firebase";
-import { collection, onSnapshot, query, orderBy, serverTimestamp, setDoc, doc } from 'firebase/firestore';
+import { collection, onSnapshot, query, serverTimestamp, setDoc, doc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import Auth from "../components/Auth";
 
@@ -18,7 +18,6 @@ export default function Home() {
   const [user, loading] = useAuthState(auth);
   const router = useRouter();
   const [boards, setBoards] = useState<BoardType[]>([]);
-  const [boardsLoading, setBoardsLoading] = useState(true);
   const [boardImages, setBoardImages] = useState<{ [key: string]: { image: string | null } }>({});
 
   useEffect(() => {
@@ -33,7 +32,6 @@ export default function Home() {
         ...doc.data(),
         id: doc.id
       } as BoardType)));
-      setBoardsLoading(false);
     });
     return () => unsubscribe();
   }, [user]);

@@ -89,7 +89,7 @@ export default function UserBoards() {
         <div className="text-center">
           <h1 className="text-5xl font-bold font-sans mt-12 mb-16">
             <span className="text-red-400">[</span>
-            <span className="text-black">{userName.toLowerCase()}'s boards</span>
+            <span className="text-black">{userName.toLowerCase()}&apos;s boards</span>
             <span className="text-red-400">]</span>
           </h1>
         </div>

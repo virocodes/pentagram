@@ -6,15 +6,15 @@ import CreatePost from '../../components/CreatePost'
 import Auth from '../../components/Auth'
 import { setDoc, doc, getDoc } from 'firebase/firestore'
 import { firestore } from '../../../../firebase'
-import { UserContext } from '@/app/home/page'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../../firebase";
+import { User } from '../../../../types/types';
 
 
 export default function Board() {
     const { id } = useParams();
-    const [user, loading] = useAuthState(auth);
-    const [images, setImages] = useState<any[]>(Array(15).fill(null));
+    const [user] = useAuthState(auth);
+    const [images, setImages] = useState<({image: string, caption: string, success: boolean} | null)[]>(Array(15).fill(null));
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [viewingIndex, setViewingIndex] = useState<number | null>(null);
     const [boardName, setBoardName] = useState<string | null>(null);
@@ -24,7 +24,7 @@ export default function Board() {
     const [imagesLoading, setImagesLoading] = useState(true);
     const [nameLoading, setNameLoading] = useState(true);
     const [isOwner, setIsOwner] = useState<boolean>(false);
-    const [boardUser, setBoardUser] = useState<any>(null);
+    const [boardUser, setBoardUser] = useState<User | null>(null);
     // Define the heights for each slot
     const heights = [
         400, 500, 300, // Column 1
@@ -89,7 +89,7 @@ export default function Board() {
         try {
             fetchImages();
         } catch (error) {
-            // pass
+            console.error("Error fetching images:", error);
         }
     }, []);
 

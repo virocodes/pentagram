@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";
 export default function Landing() {
     const router = useRouter();
-    const [user, loading] = useAuthState(auth);
     const handleClick = async () => {
         await signInWithPopup(auth, googleProvider);
         router.push("/home");
