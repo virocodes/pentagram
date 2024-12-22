@@ -8,7 +8,7 @@ import { collection, onSnapshot, query, serverTimestamp, setDoc, doc } from 'fir
 import { useRouter } from 'next/navigation';
 import Auth from "../components/Auth";
 
-import { User as UserType, Board as BoardType } from "../../../types/types";
+import { Board as BoardType } from "../../../types/types";
 
 
 export default function Home() {
